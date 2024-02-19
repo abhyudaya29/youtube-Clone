@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
+    
     const isDarkTheme=useSelector((store)=>(store.app.isDarkTheme))
     const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
     if(!isMenuOpen) return null
@@ -10,8 +12,10 @@ const Sidebar = () => {
       <div className={isDarkTheme?`p-5  shadow-lg w-48 bg-slate-800 transition-colors duration-500 rounded-sm`:`p-5 shadow-lg w-48 transition-colors duration-500 rounded-sm`}>
         {/* <h1>slider</h1> */}
         <div>
+          
           <h1 className="font-bold">Subscriptions</h1>
           <ul>
+            <li><Link to='/'>Home</Link></li>
             <li>Music</li>
             <li>Sports</li>
             <li>Gaming</li>
