@@ -12,10 +12,13 @@ const appSlice=createSlice({
         },
         toggleTheme:(state)=>{
             state.isDarkTheme=!state.isDarkTheme
+        },
+        closeMenue:(state)=>{
+            state.isMenuOpen=false;
         }
     }
 })
 
 
-export const {toggleMenue,toggleTheme}=appSlice.actions
+export const {toggleMenue,toggleTheme,closeMenue}=appSlice.actions
 export default appSlice.reducer
