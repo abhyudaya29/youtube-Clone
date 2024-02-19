@@ -13,33 +13,33 @@ const Sidebar = () => {
         {/* <h1>slider</h1> */}
         <div>
           
-          <h1 className="font-bold">Subscriptions</h1>
+          <h1 className={isDarkTheme?`text-white font-bold`:`text-black font-bold`}>Subscriptions</h1>
           <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li>Music</li>
-            <li>Sports</li>
-            <li>Gaming</li>
-            <li>Movies</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}><Link to='/'>Home</Link></li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Music</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Sports</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Gaming</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Movies</li>
             {/* <li></li> */}
           </ul>
         </div>
         <div className="py-5">
-          <h1 className="font-bold">watch later</h1>
+          <h1 className={isDarkTheme?`text-white font-bold`:`text-black font-bold`}>watch later</h1>
           <ul>
-            <li>Music</li>
-            <li>Sports</li>
-            <li>Gaming</li>
-            <li>Movies</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Music</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Sports</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Gaming</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Movies</li>
             {/* <li></li> */}
           </ul>
         </div>
         <div className="py-5">
-          <h1 className="font-bold">watch later</h1>
+          <h1 className={isDarkTheme?`text-white font-bold`:`text-black font-bold`}>watch later</h1>
           <ul>
-            <li>Music</li>
-            <li>Sports</li>
-            <li>Gaming</li>
-            <li>Movies</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Music</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Sports</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Gaming</li>
+            <li className={isDarkTheme?`text-white`:`text-black`}>Movies</li>
             {/* <li></li> */}
           </ul>
         </div>

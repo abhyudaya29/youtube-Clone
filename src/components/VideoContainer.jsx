@@ -21,7 +21,7 @@ const VideoContainer = () => {
    
   return (
     <>
-    <div className="flex flex-wrap justify-between  ">
+    <div className="flex   flex-wrap justify-between  ">
     {video.map((videoData)=>(
       // eslint-disable-next-line react/jsx-key
       <Link to={"/watch?v="+videoData.id}>

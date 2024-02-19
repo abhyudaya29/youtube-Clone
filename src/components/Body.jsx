@@ -9,7 +9,7 @@ const Body = () => {
     
   return (
     <>
-     <div className={isDarkTheme?`bg-slate-800 transition-colors duration-500 rounded-sm`:`bg-white rounded-sm transition-colors duration-500`}>
+     <div className={isDarkTheme?`  bg-slate-800 transition-colors duration-500 rounded-sm`:` bg-white rounded-sm transition-colors duration-500`}>
      <div className='flex'>
         <Sidebar/>
         <Outlet/>
