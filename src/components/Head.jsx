@@ -17,7 +17,7 @@ const Head = () => {
 
   const getSearhcQuery = async () => {
     try {
-      const searchData = await fetch(YOUTUBE__SEARCH_API + searchQuery);
+      const searchData = await fetch(YOUTUBE__SEARCH_API + searchQuery,{ referrerPolicy: "unsafe_url"});
       const searchResponse = await searchData.json();
       console.log(searchResponse[1]);
       setSuggestions(searchResponse[1]);
