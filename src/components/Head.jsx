@@ -1,14 +1,19 @@
+/* eslint-disable no-undef */
 import { Menu, CircleUser, Search, SunMoon } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenue, toggleTheme } from "../utils/appSlice";
 import { useEffect, useState } from "react";
 import { YOUTUBE__SEARCH_API } from "../utils/constants";
+import { cacheResults } from "../utils/searchSlice";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const[suggestions,setSuggestions]=useState("")
   const[showSuggestions,setShowSuggestions]=useState(false)
+  const dispatch=useDispatch()
   console.log(searchQuery);
+  const searchCache=useSelector((store)=>(store.search))
+
 
   const getSearhcQuery = async () => {
     try {
@@ -16,20 +21,33 @@ const Head = () => {
       const searchResponse = await searchData.json();
       console.log(searchResponse[1]);
       setSuggestions(searchResponse[1]);
+    //   update in catch
+    dispatch(cacheResults({
+        [searchQuery]:searchResponse[1]
+    }))
+    
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(()=>{
-      const timer=setTimeout(()=>getSearhcQuery(),200);
-      return ()=>{
-          clearTimeout(timer)
-      }
+    const timer=setTimeout(()=>{
+        if(searchCache[searchQuery]){
+            setSuggestions(searchCache[searchQuery]);
+        }
+        else{
+            getSearhcQuery()
+        }
+
+    },200)
+    return ()=>{
+        clearTimeout(timer)
+    }
 
   },[searchQuery])
 
-  const dispatch = useDispatch();
+  
 
   const toggleMenueHandler = () => {
     dispatch(toggleMenue());
