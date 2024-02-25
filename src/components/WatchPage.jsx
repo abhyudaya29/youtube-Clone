@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { closeMenue } from "../utils/appSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
+import LiveChat from "./LiveChat";
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
   console.log(searchParams.get("v"));
@@ -12,11 +13,11 @@ const WatchPage = () => {
   }, []);
   return (
     <>
-      <div>
-      <div className="px-5 flex h-screen">
+      <div className="flex flex-col w-full">
+      <div className="px-5 flex h-screen w-full">
         <iframe
-          width="900"
-          height="500"
+          width="1800"
+          height="400"
           src={"https://www.youtube.com/embed/"+searchParams.get("v")}
           title="YouTube video player"
           frameBorder="0"
@@ -24,7 +25,11 @@ const WatchPage = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
+         <div className="w-full">
+        <LiveChat/>
       </div>
+      </div>
+     
       <CommentsContainer/>
       </div>
     </>

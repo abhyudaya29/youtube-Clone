@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { User2Icon } from "lucide-react";
-import React from "react";
+
 const commentData = [
   {
     name: "Abhyudaya",
